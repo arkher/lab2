@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name="Vendas",schema="public")
+@Table(name="Vendas", schema="public")
 
 @Data
 @Builder
@@ -29,7 +29,7 @@ public class Vendas {
     @Column(name="numeroVenda")
     private Long numeroVenda;
 
-    @Column(name="data_venda",nullable = false)
+    @Column(name="data_venda", nullable = false)
     @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
     private LocalDate data_venda;
 

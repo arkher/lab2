@@ -12,7 +12,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
-@ExtendWith(SpringExtension.class) //para usar o contexto padrão do springboot
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("Test")
 public class MercadoriasRepositoryTest {
@@ -21,13 +21,11 @@ public class MercadoriasRepositoryTest {
 
     @Test
     public void verificaSalvaMercadoria(){
-        int i = 1;
-        Long l = Long.valueOf(i);
-        Mercadorias mercadoria = Mercadorias.builder().codigo(l).descricao("El produtito").build();
+        Mercadorias mercadoria = Mercadorias.builder().descricao("Produto bom").build();
 
         Mercadorias salvo = repository.save(mercadoria);
 
-        // Asserções
+        //Verificação
         Assertions.assertNotNull(salvo);
         Assertions.assertEquals(mercadoria.getCodigo(), salvo.getCodigo());
         Assertions.assertEquals(mercadoria.getDescricao(), salvo.getDescricao());

@@ -12,8 +12,7 @@ import lombok.NoArgsConstructor;
  */
 
 @Entity
-@Table(name="mercadorias",schema="public")
-
+@Table(name="mercadorias", schema="public")
 @Builder
 @Data
 @NoArgsConstructor

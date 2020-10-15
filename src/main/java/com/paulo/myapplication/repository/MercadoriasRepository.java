@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.paulo.myapplication.entidades.Mercadorias;
 
-public interface MercadoriasRepository extends JpaRepository <Mercadorias,Long> {
+import java.util.Optional;
 
+public interface MercadoriasRepository extends JpaRepository <Mercadorias,Long> {
+    Optional<Mercadorias> findById(Long id);
 }
